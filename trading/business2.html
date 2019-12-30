@@ -1,0 +1,361 @@
+<!-- If you edit this, then please make the same changes to layout_for_doc_website.html, as that is used for the web
+     doc site generation which we put analytics tracking on to identify any potential problem pages  -->
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>安全／高可用 &mdash; Arkenstone 4.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'4.8',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="next" title="定义" href="marketmaker.html" />
+    <link rel="prev" title="为什么交易" href="business.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> Arkenstone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<br>
+<a href="https://www.goxtx.com/index_cn.html" title="GoXTX 下一代交易平台技术供应商">GoXTX</a>赞助
+<br>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id3">鸣谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id4">免责声明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">写在前面</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html">对冲 (Hedge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#cfd">CFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#ddd">DDD: 领域驱动设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cqrs">CQRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#eventsource">事件源（EventSource）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cap">CAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id2">我们的问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html">语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id2">消息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id3">缓存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id4">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id5">其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#cloud">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html">内存和CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#java-memory-model">Java memory model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id3">其它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#fix">FIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#sbe">SBE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id2">实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id3">参考</a></li>
+</ul>
+<p class="caption"><span class="caption-text">交易引擎</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="business.html">为什么交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id6">如何交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id7">流动性，价格，杠杆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id11">交易成本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id12">概述</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安全／高可用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marketmaker.html">定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marketmaker.html#mass-quote">Mass Quote(批量下单)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marketmaker.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html">限流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#price-banding">Price Banding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#id2">短路设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#id3">市场和产品状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading.html">匹配系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading.html#id6">设计原则</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading2.html">模型 Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading2.html#data-structure">数据结构 Data Structure</a></li>
+</ul>
+<p class="caption"><span class="caption-text">订单管理</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering1.html">订单基本约束</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering1.html#id3">订单类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering2.html">订单生命周期</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering2.html#id2">从订单到持仓</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/Implied_Orders.html">Implication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FIX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fix/biz.html">关于FIX</a></li>
+</ul>
+<p class="caption"><span class="caption-text">市场数据</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../market.html">TODO1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../market.html#todo2">TODO2</a></li>
+</ul>
+<p class="caption"><span class="caption-text">结算清算</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clear.html">结算结算</a></li>
+</ul>
+<p class="caption"><span class="caption-text">前置机</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontend.html">前置机</a></li>
+</ul>
+<p class="caption"><span class="caption-text">支付</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html">第三方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#otc">OTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#id2">虚拟币</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../crm.html">CRM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">运维</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">系统需求</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#java">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#kafka">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#id2">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#redis">Redis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arkenstone</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>安全／高可用</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/trading/business2.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>背景知识(技术)</p>
+<hr class="docutils" />
+<p>一个交易系统需要满足那些要求？交易系统和其他系统，既有共性，又有很多的不一样地方；</p>
+<p>不像其他领域需求比较不确定、多变，对于金融行业，很多业务背景其实几十年，甚至上百年来都没有改变；</p>
+<p>很久以前没有电脑时候大家是这样玩的:</p>
+<img alt="../_static/images/old_trading.png" src="../_static/images/old_trading.png" />
+<p>可以想象大家济济一堂，熙熙攘攘，吵吵闹闹，对着黑板数字口若悬河，眉飞色舞；和现在对着K线大谈一通其实没有什么差别，只不过过去人与人更近点。</p>
+<p>时至今日任然有很多大妈大爷选择在营业厅：</p>
+<img alt="../_static/images/tradinglady.jpg" src="../_static/images/tradinglady.jpg" />
+<p>交易平台这样一个充满荷尔蒙，总是让人蠢蠢欲动，欲罢不能的产业，更是在玩家，庄家，服务提供者们的共同努力下，</p>
+<p>将技术的运用推到了极致；互联网和移动化，更多的参与者涌入，如何做好这个国民手游，是个非常挑战而又有意义的事情。</p>
+<div class="section" id="id1">
+<h1>安全／高可用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>对于金融系统来说， 这是个硬性指标，安全可能分不同类别， 比如企业的内部环境，金融系统一般有自己专有网络环境，
+对于办公室场所上班行为也有非常严格的控制，毕竟往往堡垒都是从内部攻破。这些都有相应的标准、规范和法律， 基本有专门的团队负责这块东西。</p>
+<p>和我们交易相关联的部分， 很大部分是数据和平台的安全， 平台的安全，信息交互的通道安全否， 平台是否稳定， 数据存储安全否，防篡改，
+是否有冗余备份，防止丢失。</p>
+<p>对于数据通道存储安全，使用加密算法，现在一般都比较成熟， 业有规范的行业标准。</p>
+<p>对于平台的安全也就是灾备， 现在的金融系统， 最主流的灾备技术是两地三中心（即生产数据中心、同城灾备中心、异地灾备中心）。</p>
+<img alt="../_static/images/cdp.png" src="../_static/images/cdp.png" />
+<p>参考下  <a class="reference external" href="http://tech.idcquan.com/89143.shtml">阿里高可用技术架构</a>  第一个是做了同城的双活，第二个做了异地只读及冷备，第三个是做了异地多活，这块， 基本专门系统团队维护， 对于我们设计开发的团队， 接触不多。 上面的文章， 可能更多的谈到实现的过程， 没有具体实现的细节， 说到这里，其实阿里云上有专门针对金融系统的解决方案。</p>
+<p>这里人家也是拿出看家的本领来分享，能够做到异地多活还是非常牛掰和费钱的，保证最终一致性可能是退而求其次的方案， 参考CAP 理论。</p>
+<p>翻了翻还有不少： 写事情真不能100%完美退而求其次也不错：<a class="reference external" href="https://yq.aliyun.com/articles/57715?utm_campaign=&amp;utm_medium=&amp;utm_source=QQ&amp;utm_content=m_9598">《异地多活设计辣么难？其实是你想多了！》</a> ；服务降级等在应用层中控制也是不错方案。 <a class="reference external" href="http://www.csdn.net/article/2015-10-27/2826042">《面向业务的立体化高可用架构设计》</a></p>
+<p>总之条条大道通罗马，八仙过海各有神通，不拘一格，只要能解决问题的方法就是好方法、对的方法。</p>
+<p>保证高可用性，另外一个监控运维也是必不可少的步骤， 毕竟三分代码， 七分运维。总之成功的项目和每个部门、每个环节都密不可分。成功的项目都是类似的， 不成功的项目是千差万别的。</p>
+<p>我们这里将主要分享的是， 具体的应用层面， 如何实现数据一致性， 下面会有专门的章节讲解，在应用层面如何使用 Eventsource 等设计模式，保证数据一致性，和可追溯。</p>
+<p>对数据的冗余，更多会使用分片partition 和 replication； 如何动态的调整不同节点之间的balance， 整个cluster集群的维护。</p>
+</div>
+<div class="section" id="id2">
+<h1>性能<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>天下武功，唯快不破；对于交易系统，快代表这先人一步得到消息， 也就意味这更多、更佳的交易机会，和更好的盈利；</p>
+<p>所以人对交易系统延误的忍受会被远远的放大， 可能你在刷淘宝的时候多1～2秒延迟你还能忍受， 但是在交易系统，就像有句台词：我分分秒秒几百万的盈亏。</p>
+<p>这有点夸张， 但是确实很现实， 特别在高风险、高杠杆化的交易中， 分秒就是盈亏的分界线；</p>
+<p>所以性能除了我们上面说到的高可用性外，在单节点上如何实现性能最大化是在设计中必须要考虑的。</p>
+<p>现有交易系统大部分基于一些更底层更高效的语言（c/c++）， 但是语言始终是一门工具。能否达到预期的性能需求， 还是要看具体的设计和实现。</p>
+<p>Arkenstone 系统， 基础开发语言是java，可能熟悉编程语言的人怀疑java 能否胜任， 但是对于一个企业的开发， 有诸多的因素需要考量：成本，效率，投资回报率等等，</p>
+<p>其实对于性能的需求，同高可用性需求一样， 大家有诸多理解上的误区， 这也同大家对质量的理解一样， 质量是越高越好吗？  答案不是， 是能满足你的质量就是最好的质量。</p>
+<p>你用一次性塑料袋去买捆菜， 非得要这个袋子镀金的，上面有印有精美的花纹的， 那是不现实的。</p>
+<p>同样对于性能的需求，对于一个目标是服务于每个能上网的民众； 在如今基础上你也许很难达到毫秒级别，即时能够达到， 付出的成本也许大大超出你的承受范围，</p>
+<p>所以做生意或者做人一样都得有点妥协，这是么有原则性吗？不是！这恰恰是最好的原则； <strong>鱼与熊掌不可兼得</strong>！</p>
+<p>于是乎， 达到恰好是资源、能力范围内能够达到，最好的、最大满足性能需求的设计，便是当下最优的设计，不要 <strong>over design</strong> 才是对你投资人和合伙人最好的负责！</p>
+<p>除了java 是基础的语言， 也有必不可少的中间件：缓存、 内存网格、消息等， 下篇篇幅将一一细述。</p>
+<p>PS:  对于某些细节过分的追求，可能是大部分技术出生的工科男的一大优点也是一大通病， 项目中最大的风险固然是时间成本不够，还有一个潜在的隐形杀手是项目镀金！</p>
+<p>一个项目必须100%完美才能上马？非的花费大部分时间去优化一个1%性能提升的模块？ 不是的。特别对于IT项目，等到完美的那一刻， 也许这个项目永无上线之日。</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="marketmaker.html" class="btn btn-neutral float-right" title="定义" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="business.html" class="btn btn-neutral float-left" title="为什么交易" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, AK2018
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

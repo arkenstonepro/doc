@@ -1,0 +1,46 @@
+Market Integrity
+
+============================================
+
+
+
+
+Price indicates the amount of money, or its equivalent, by which an instrument is
+
+1.  quoted,
+2.  traded,
+3.  settled, and
+4.  cleared.
+
+
+1.  High Trade/ Low Trade - Established when a trade occurs which results in the highest trade price for the current session. Likewise, the Low Trade Price is established when a trade occurs which results in the lowest trade price for the current session
+2.  Better Bid - A bid that is higher than the last traded price and also higher than the previous Better Bid.
+3.  Better Offer - An offer that is lower than the last traded price and also lower than the previous Better Offer.
+4.  Highest Better Bid - The highest bid for the trading day.
+5.  Lowest Better Offer - The lowest offer for the trading day.
+6.  Settlement Price - Settlement Price is calculated based on market activity (trades, bids, and offers) for that instrument during a predetermined time frame. This price is used to determine margin requirements and the following day's price limits.
+7.  Indicative Opening Price (IOP) - The Indicative Opening Price (IOP) is the probable price at which the market will open, or re-open, given the current book and order activity.
+8.  Opening Price - The Opening Price is the price for the first trade of the day.
+
+
+
+
+
+1.  settlement price
+2.  last trade price
+3.  best bid/offer price
+
+
+
+
+
+
+
+
+https://www.cmegroup.com/confluence/display/EPICSANDBOX/Pricing
+
+
+
+
+
+

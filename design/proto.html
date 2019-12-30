@@ -1,0 +1,444 @@
+<!-- If you edit this, then please make the same changes to layout_for_doc_website.html, as that is used for the web
+     doc site generation which we put analytics tracking on to identify any potential problem pages  -->
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>概要 &mdash; Arkenstone 4.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'4.8',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="next" title="为什么交易" href="../trading/business.html" />
+    <link rel="prev" title="内存和CPU" href="performance.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> Arkenstone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<br>
+<a href="https://www.goxtx.com/index_cn.html" title="GoXTX 下一代交易平台技术供应商">GoXTX</a>赞助
+<br>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id3">鸣谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id4">免责声明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">写在前面</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="biz.html">对冲 (Hedge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biz.html#cfd">CFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biz.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddd.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddd.html#ddd">DDD: 领域驱动设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddd.html#cqrs">CQRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddd.html#eventsource">事件源（EventSource）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddd.html#cap">CAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddd.html#id2">我们的问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddd.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="middleware.html">语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="middleware.html#id2">消息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="middleware.html#id3">缓存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="middleware.html#id4">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="middleware.html#id5">其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="middleware.html#cloud">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">内存和CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html#java-memory-model">Java memory model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html#id3">其它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html#id4">参考</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#fix">FIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sbe">SBE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id3">参考</a></li>
+</ul>
+<p class="caption"><span class="caption-text">交易引擎</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html">为什么交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id6">如何交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id7">流动性，价格，杠杆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id11">交易成本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id12">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business2.html">安全／高可用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business2.html#id2">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html">定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html#mass-quote">Mass Quote(批量下单)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html">限流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#price-banding">Price Banding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#id2">短路设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#id3">市场和产品状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading.html">匹配系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading.html#id6">设计原则</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading2.html">模型 Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading2.html#data-structure">数据结构 Data Structure</a></li>
+</ul>
+<p class="caption"><span class="caption-text">订单管理</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering1.html">订单基本约束</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering1.html#id3">订单类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering2.html">订单生命周期</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering2.html#id2">从订单到持仓</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/Implied_Orders.html">Implication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FIX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fix/biz.html">关于FIX</a></li>
+</ul>
+<p class="caption"><span class="caption-text">市场数据</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../market.html">TODO1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../market.html#todo2">TODO2</a></li>
+</ul>
+<p class="caption"><span class="caption-text">结算清算</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clear.html">结算结算</a></li>
+</ul>
+<p class="caption"><span class="caption-text">前置机</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontend.html">前置机</a></li>
+</ul>
+<p class="caption"><span class="caption-text">支付</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html">第三方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#otc">OTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#id2">虚拟币</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../crm.html">CRM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">运维</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">系统需求</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#java">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#kafka">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#id2">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#redis">Redis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arkenstone</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>概要</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/design/proto.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>协议</p>
+<hr class="docutils" />
+<p><strong>编码解码</strong>，不得不再次搬出这个话题， 编码解码就是程序语言之间交流的语言！</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>一旦你适应了用粗暴的思考架设了你的设计， 再从头来会很难，一是你没有胆量推倒重来，二是没有时间，三是你没有耐心； 如果，反过来从最粗陋的底层开始， 倒有可能雕琢出更加精致的上层建筑！
+</pre></div>
+</div>
+<p>撇开一堆高大上的RPC、分布式等等上层建筑，如何编码解码是个最基础的环节，在自己进程内，怎么交流都无障碍， 就好比大家都是中国人，都在说汉语，基本能够理解你说话的意思.</p>
+<p>但凡需要跨进程，就需要编码解码你的信息， 不管是同一个还是不同语言； 这就比方你需要和一个吼达不到的人交流，你需要电话，或者书信来传递。 这里首要做的事情就是， 把你要表达的意思，转换成书信、电流信号；如果转换的言不达意，再好的通道也是鸡同鸭讲。</p>
+<p>在计算机的世界里面你将收获一堆乱码！ 解编码，就是程序之间通讯的一道巴别塔：</p>
+<img alt="../_static/images/proto/proto1.jpg" src="../_static/images/proto/proto1.jpg" />
+<p>程序之间的交流和任何信息的交流过程其实都一样， 上面说对面讲话如同进程内通讯，其实还是不太精确，任何即使面对面的对话，其实都是有解编码过程，你脑子里面想的电信号，驱动你发音系统产生气流的震动，通过空气传递到对方，对方的听觉系统把震动转换成电流信号，给大脑皮层理解。</p>
+<img alt="../_static/images/proto/proto2.png" src="../_static/images/proto/proto2.png" />
+<div class="section" id="id1">
+<h1>概要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>我们想要的解编码协议需要满足：</p>
+<ol class="arabic simple">
+<li>够傻够呆， 字节码打出来，即使你用笔手动算也能算出来</li>
+<li>跨语言，小到内部系统之间交流， 大到对外APP, 客户端是个程序给个套路就可以解析</li>
+<li>够小，不能臃肿如XML 等之类，但是无需为了个把字节问题影响标准 <strong>1</strong></li>
+<li>够快，够快才能显示我们的优势，同理不能为了快影响标准 <strong>1</strong></li>
+</ol>
+<hr class="docutils" />
+<p>满足上面几点的其实很难， 因为大部分不能满足要求 <strong>一</strong>； 确实如此，这个犹如时间、成本、质量铁三角或者 CAP 一样难以都满足。</p>
+<img alt="../_static/images/proto/proto4.jpg" src="../_static/images/proto/proto4.jpg" />
+<p>其实很简单， 所有的项目、工具、套路最终都是个权衡，权衡和取舍！首先你不是什么消息都需要交流， 对交流的内容和范围做限制和取舍， 可以很容易满足上面的几点。 大部分的IT 项目其实为了那 20% 甚至 5% 的功能，占据80%以上的代码， 贡献了绝大部分的BUG. 程序因人而生，但是公平的对待程序和自己可以省掉很多的麻烦，需要和外围通讯的消息需要满足：</p>
+<ol class="arabic simple">
+<li>绝大部分是 primitive 类型： 这个好理解， primitive  所有语言解释套路一致，歧义少！</li>
+<li>字段定长<ol class="arabic">
+<li>如果实在需要个类似string 呢？ 很简单定长， 8/12/16/24/36/48 随便你选， 超过这个呢，对不起，走其他通道。</li>
+</ol>
+</li>
+<li>少group 属性<ol class="arabic">
+<li>group 也就是属性是个列表(list)， 列表给整个消息带来不确定性。于是少设计列表属性，能拆分就拆分， 不能拆分说明你业务模型有问题。</li>
+</ol>
+</li>
+</ol>
+<p>有人说这样一分其实很简单， 用个基本的分隔符，就可以把消息编解码出来， 你说对了，用个竖线( | ) 或者逗号(,)，从笔者角度确实是个非常非常不错的选择，紧凑、好懂，非常完美的满足上面的四点， 而且部分十分微小的消息这样处理非常好用。</p>
+<p>经过如此筛选，最终可能上百个消息，最后剩下几十个，最后带group 的只有区区数的过来的几个。 OK 了下面的选择就比较宽泛 容易了。</p>
+</div>
+<div class="section" id="fix">
+<h1>FIX<a class="headerlink" href="#fix" title="Permalink to this headline">¶</a></h1>
+<p>最初对FIX 我是抗拒的，程序员容易犯的错误，是对一些古老、或者不时髦的东西有偏见，会一直以为最新的东西才是最NB, 最cool, 会了面子上过得去。但是这个协议是如此的简单和健壮，已致他一直被金融界广泛的使用，参考下文有介绍，Key+Value+SOH(分隔符，字节码 1 ) 其实就是这个协议的全部；什么狗日的 hack 帮我省那十来个字节没有的， 比较完美符合标准； 对，其实我们在内部也大胆的使用了FIX 作为通讯协议， 如和 websocket 客户端交流， 我们也使用此风格消息进行交互。 看到 LOG 一窜窜漂亮的K=V 打印出来，有种赏心悦目的感觉！</p>
+</div>
+<div class="section" id="sbe">
+<h1>SBE<a class="headerlink" href="#sbe" title="Permalink to this headline">¶</a></h1>
+<p>SBE Simple Binary Encoding, 听到这个词就有种对眼的感觉， Simple 多谦虚直白的表达方式，中文的SB编码又有点气吞山河如虎的傲娇！ 读罢，果然简单直接！ 好帅真的一个协议。
+SBE <a class="reference external" href="https://github.com/real-logic/simple-binary-encoding/wiki/Design-Principles">设计准则</a> , 我就不一一翻译，直接COPY Jdon 翻译：</p>
+<ol class="arabic simple">
+<li>Copy-Free：不采取中间缓冲，因为其在多次字节复制中有性能损耗。采取直接与底层缓冲编码与解码，其限制是消息大小不能超过传输缓存的大小，可以进行碎片分段。</li>
+<li>Native Type Mapping：copy-free的设计也通过将数据直接编码为底层缓冲的原生类型中得到巨大好处，比如一个64位整数型能直接作为x86_64 MOV汇编指令被编码进入底层缓冲。通过这种原生的类型映射，一个字段能够以类似高阶语言如C++/Java中class类似和struct字段一样高效率访问。</li>
+<li>Allocation-Free：对象的分配会导致CPU缓存流失从而降低效率，这些被分配的对象后来得收集并删除，对于Java是使用垃圾回收机制，导致stop-the-world暂停。SBE编码采取flyweight 模式，基于底层缓冲的flyweight窗口直接对消息编码与解码，相应类型的享元是基于消息头部模板id选择的。</li>
+<li>Streaming Access：现代内存子系统已成为愈加复杂，该算法能够对性能和一致性有很大帮助，实现最好的性能与最一致的延迟，这是以一种上升顺序方式访问内存的方式实现的，也就是一种流。</li>
+<li>Word Aligned Access：当word以非word大小边界访问时，多CPU架构表现出显著性能问题，一个word的起始地址应该是其以字节为单位大小的倍数，64位整数只能从字节地址能被8整除的地方开始，32位整数只能从被4整除的字节地址开始。</li>
+</ol>
+<p>简单粗暴， 是我个人对SBE 最直接的感受，  但是好用！</p>
+<img alt="../_static/images/proto/proto5.jpg" src="../_static/images/proto/proto5.jpg" />
+<p>SBE 一个消息（Frame）包含哪些内容：</p>
+<img alt="../_static/images/proto/proto6.png" src="../_static/images/proto/proto6.png" />
+<p>在HTTP中涉及久了大家基本都记得一些这样的图形， 基本就是个header + payload 设计手法：</p>
+<img alt="../_static/images/proto/proto7.png" src="../_static/images/proto/proto7.png" />
+<p>当然SBE 属于第六层 (<a class="reference external" href="https://en.wikipedia.org/wiki/OSI_model#Layer_6:_Presentation_Layer">OSI</a>)， 也就是表示层（Presentation Layer）， 最终还需要上面的应用也就是你的业务逻辑层来处理这些数据的。</p>
+<p>Header 保持简单， 只保留最最基本的信息， 或者你消息路由里面需要的信息， 避免解析整个消息流。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">composite</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;messageHeader&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">type</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;blockLength&quot;</span> <span class="n">primitiveType</span><span class="o">=</span><span class="s2">&quot;uint16&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nb">type</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;templateId&quot;</span> <span class="n">primitiveType</span><span class="o">=</span><span class="s2">&quot;uint16&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nb">type</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;schemaId&quot;</span> <span class="n">primitiveType</span><span class="o">=</span><span class="s2">&quot;uint16&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nb">type</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;version&quot;</span> <span class="n">primitiveType</span><span class="o">=</span><span class="s2">&quot;uint16&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">composite</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>这样的header 占据8个字节的长度， 包括信息：</p>
+<ol class="arabic simple">
+<li>blockLength: payload 的长度</li>
+<li>templateId: 消息模板， 哪种类型消息， 编码解码需要对象的解码编码器。</li>
+<li>schemaId： 属于哪个 schema  比如和FIX 哪个兼容</li>
+<li>version： 整个是你消息的版本， 建议不适用，如果消息变了，本人更趋向创建个新的类，即使加上个V1..N 也可以。</li>
+</ol>
+<p>对于最简单的消息：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">sbe</span><span class="p">:</span><span class="n">message</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Internal Time Price&quot;</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;916&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Price&quot;</span> <span class="n">semanticType</span><span class="o">=</span><span class="s2">&quot;Price&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">field</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;product&quot;</span> <span class="n">presence</span><span class="o">=</span><span class="s2">&quot;required&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;VARCHAR12&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="n">field</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;2&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bid&quot;</span> <span class="n">presence</span><span class="o">=</span><span class="s2">&quot;required&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;double&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="n">field</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;3&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ask&quot;</span> <span class="n">presence</span><span class="o">=</span><span class="s2">&quot;required&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;double&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="n">field</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;4&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;timestamp&quot;</span> <span class="n">presence</span><span class="o">=</span><span class="s2">&quot;required&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;int64&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">sbe</span><span class="p">:</span><span class="n">message</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>product 是一个12长度的字符串， 然后是一bid 和 ask 报价， 然后是一个epoch 时间戳。
+可以看到这个对象的固定长度是 ：  36+8 = 44 字节， 固定长度消息。 比如对于bid  字段:</p>
+<p>offset 为 header offset 也就是8个字节 + 前面的 product  12， 也就是bid 偏移是 20</p>
+<p><strong>编码</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">buffer</span><span class="o">.</span><span class="n">putDouble</span><span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="mi">12</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">java</span><span class="o">.</span><span class="n">nio</span><span class="o">.</span><span class="n">ByteOrder</span><span class="o">.</span><span class="n">LITTLE_ENDIAN</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>解码</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">buffer</span><span class="o">.</span><span class="n">getDouble</span><span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="mi">12</span><span class="p">,</span> <span class="n">java</span><span class="o">.</span><span class="n">nio</span><span class="o">.</span><span class="n">ByteOrder</span><span class="o">.</span><span class="n">LITTLE_ENDIAN</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>是不是好舒服， 用笔都可以算出来。一个协议简单到这个程度也令人咂舌， 好就好在这个协议没有完备的周边设施，个人理解这个是弊端也是好处！弊端不是拿过来就用， 好处是给实现的人留下很多的空间， 而很多的协议都是全家桶， 周边都帮你实现， 一旦出现乱子， 你再去扒拉，非常的艰难。</p>
+<p>一旦你适应了用粗暴的思考架设了你的设计， 再从头来很难，一是你没有胆量推倒重来，二是没有时间，三是你没有耐心； 如果，反过来从最粗陋的底层开始， 倒有可能雕琢出更加精致的上层建筑！</p>
+</div>
+<div class="section" id="id2">
+<h1>实践<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>上面说的基本就是SBE 全部， 和他的一个 <a class="reference external" href="https://github.com/real-logic/simple-binary-encoding">GIT版本</a> , 其实这个项目不能说实现，因为SBE 和FIX 一样太简单了， 这个项目仅仅是个TOOL, 生成了最基础的几个语言的 stub, 和你 application 层美好的结合还需要自己去实现！</p>
+<img alt="../_static/images/proto/proto9.png" src="../_static/images/proto/proto9.png" />
+<p>首先和你底层通讯框架集合起来（RPC, MQ 等）， 然后和你的业务bean结合起来。 现在的RPC， 或者MQ 框架都有plugin 进自己的 codec 实现， 好说， 但是和自己业务bean 结合起来就比较麻烦.</p>
+<img alt="../_static/images/proto/proto10.jpg" src="../_static/images/proto/proto10.jpg" />
+<p>你不能decoder/encoder 这些 stub 类往你业务层传啊， 这个薄的一层非常的让人苦恼。 必须要自动代码生成一些伪类， 有这些自动生成的类有：</p>
+<ol class="arabic simple">
+<li>Adapter:  反射封装encoder/decoder  get/set 之类</li>
+<li>Enum： 映射， 这个比较暴力就switch case</li>
+<li>Stub: 分两种其实如果你需要 Lazy 模式，生成一个业务bean 伪类，覆盖get方法， 对group 这里需要特别对待， 如果是 Eager 模式不需要使用伪类，直接 adapter 中 解码new一个然后 get/set 上去。</li>
+<li>反射，由于SBE 是基础XML， 自开发一套annotation, 方便一次扫描出来！</li>
+</ol>
+<hr class="docutils" />
+<p>由于以前我们一直使用kryo序列化方式，效率和压缩比还是不错， 但是对其他语言不兼容，换成 SBE 后对于一些小消息，由于有头（部分头不止8字节长度，Domain 消息有29字节长度），还有对于optional 字段其实 SBE 也要占空间， 所以消息的大小没有多大的优势，但是解码编码还是飞快不少！</p>
+<p>特别是如果你根据消息的ID 也就是 tempalteId 做路由可以说非常快，记得你的 templateId 固定位置， 直接截取byte 相关位置就可以路由了。</p>
+<p>在 <strong>二代</strong> 版本中， SBE 仅在小规模范围使用， 80% 被ProtoBuffer 替换。比较通用性好点点。考虑外围系统开发的难度。</p>
+</div>
+<div class="section" id="id3">
+<h1>参考<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://github.com/FIXTradingCommunity/fix-simple-binary-encoding/blob/master/v1-0-STANDARD/doc/00Contents.md">SBE 协议</a></li>
+<li><a class="reference external" href="https://weareadaptive.com/2013/12/10/sbe-1/">Simple Binary Encoding, a new ultra-fast marshalling API in C++, Java and .NET</a></li>
+<li><a class="reference external" href="http://www.jdon.com/47210">简单二进制编码(SBE)</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/OSI_model#Layer_6:_Presentation_Layer">OSI model</a></li>
+<li><a class="reference external" href="https://github.com/real-logic/simple-binary-encoding">GIT Simple binary encoding</a></li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../trading/business.html" class="btn btn-neutral float-right" title="为什么交易" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="performance.html" class="btn btn-neutral float-left" title="内存和CPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, AK2018
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

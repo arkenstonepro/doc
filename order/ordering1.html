@@ -1,0 +1,548 @@
+<!-- If you edit this, then please make the same changes to layout_for_doc_website.html, as that is used for the web
+     doc site generation which we put analytics tracking on to identify any potential problem pages  -->
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>订单基本约束 &mdash; Arkenstone 4.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'4.8',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="next" title="订单生命周期" href="ordering2.html" />
+    <link rel="prev" title="模型 Domain" href="../trading/trading2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> Arkenstone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<br>
+<a href="https://www.goxtx.com/index_cn.html" title="GoXTX 下一代交易平台技术供应商">GoXTX</a>赞助
+<br>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id3">鸣谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id4">免责声明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">写在前面</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html">对冲 (Hedge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#cfd">CFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#ddd">DDD: 领域驱动设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cqrs">CQRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#eventsource">事件源（EventSource）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cap">CAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id2">我们的问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html">语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id2">消息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id3">缓存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id4">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id5">其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#cloud">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html">内存和CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#java-memory-model">Java memory model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id3">其它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#fix">FIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#sbe">SBE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id2">实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id3">参考</a></li>
+</ul>
+<p class="caption"><span class="caption-text">交易引擎</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html">为什么交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id6">如何交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id7">流动性，价格，杠杆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id11">交易成本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id12">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business2.html">安全／高可用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business2.html#id2">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html">定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html#mass-quote">Mass Quote(批量下单)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html">限流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#price-banding">Price Banding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#id2">短路设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#id3">市场和产品状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading.html">匹配系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading.html#id6">设计原则</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading2.html">模型 Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading2.html#data-structure">数据结构 Data Structure</a></li>
+</ul>
+<p class="caption"><span class="caption-text">订单管理</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">订单基本约束</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id3">订单类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordering2.html">订单生命周期</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordering2.html#id2">从订单到持仓</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Implied_Orders.html">Implication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FIX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fix/biz.html">关于FIX</a></li>
+</ul>
+<p class="caption"><span class="caption-text">市场数据</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../market.html">TODO1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../market.html#todo2">TODO2</a></li>
+</ul>
+<p class="caption"><span class="caption-text">结算清算</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clear.html">结算结算</a></li>
+</ul>
+<p class="caption"><span class="caption-text">前置机</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontend.html">前置机</a></li>
+</ul>
+<p class="caption"><span class="caption-text">支付</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html">第三方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#otc">OTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#id2">虚拟币</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../crm.html">CRM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">运维</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">系统需求</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#java">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#kafka">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#id2">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#redis">Redis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arkenstone</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>订单基本约束</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/order/ordering1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>基本概念(一)</p>
+<hr class="docutils" />
+<p>订单管理系统， 一个单子生命周期从提交到 <strong>Arkenstone</strong> 前置机器，进入booker 系统开始， 这里包含</p>
+<div class="section" id="id1">
+<h1>订单基本约束<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>在每个订单基本类型之外，有几个要素：</p>
+<ol class="arabic simple">
+<li>周期</li>
+<li>最小执行数量（可选,尚不支持）</li>
+<li>显示数量（尚不支持）</li>
+</ol>
+<table border="1" class="docutils" id="id17">
+<caption><span class="caption-text">订单基本约束</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="63%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">类型</th>
+<th class="head">描述</th>
+<th class="head">备注</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Day</td>
+<td>日单，当日有效(交易日)</td>
+<td>支持</td>
+</tr>
+<tr class="row-odd"><td>Good Till Cancel (GTC)</td>
+<td>一直在Book 直到: 完全执行，取消，产品下架</td>
+<td>支持</td>
+</tr>
+<tr class="row-even"><td>Good Till Date (GTD)</td>
+<td>预设到一个日期</td>
+<td>部分支持</td>
+</tr>
+<tr class="row-odd"><td>Fill and Kill (FAK)</td>
+<td>匹配在Book上面的Order, 如果有最小数量限制，立马成交， 如果不能成交，立马取消</td>
+<td>不支持</td>
+</tr>
+<tr class="row-even"><td>Fill or Kill (FOK)</td>
+<td>要不全部成交，要不全部取消</td>
+<td>不支持</td>
+</tr>
+<tr class="row-odd"><td>Minimum Quantity</td>
+<td>用户可以设定一个最小成交数量，可能包含的规则</td>
+<td>不支持</td>
+</tr>
+<tr class="row-even"><td>Display Quantity</td>
+<td>NA</td>
+<td>不支持</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li>FAK orders are immediately executed against resting orders. If the order cannot be fully filled, the remaining balance is canceled. A minimum quantity can be specified. If the specified minimum quantity cannot be filled, the order is canceled. FAK orders are accepted during the <strong>Open market state only</strong>; they will be rejected during any other market state.</li>
+<li>FOK orders must be fully filled immediately or the entire order is canceled. An FOK order is created by using the FAK qualifier and setting the minimum quantity to the total order quantity. FOK orders are accepted during the <strong>Open market state only</strong>; they will be rejected during any other market state.</li>
+<li>Minimum Quantity: The user can specify a minimum quantity which must be executed for the order. The entire order quantity is displayed to the market. The following rules apply to Minimum Quantity:</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>If an order specifies a minimum quantity, then at least the minimum quantity must be filled immediately.</li>
+<li>If at least the minimum quantity cannot be filled, then <strong>the entire order is cancelled</strong>.</li>
+<li>If the minimum quantity or more is filled, then the <strong>remaining quantity</strong> is placed on the book.</li>
+</ol>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>显示数量<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>以均匀粒度，将订单释放到市场上， 直到数量全部消费掉。</p>
+<p>比如： 用户下了一个100数量的买单， 显示数量设置为10， 每次有10个单子显示在市场中，剩余的还放在book 中但是不显示给市场，直到10个成交，剩余在放置10个在book中。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h1>订单类型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<p>订单类型各种平台不一而终, Arkenstone 开源版本，实现基本核心的几个。</p>
+<table border="1" class="docutils" id="id18">
+<caption><span class="caption-text">订单类型</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="63%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">类型</th>
+<th class="head">描述</th>
+<th class="head">备注</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Market</td>
+<td>市价</td>
+<td>支持</td>
+</tr>
+<tr class="row-odd"><td>Limit</td>
+<td>限价</td>
+<td>支持</td>
+</tr>
+<tr class="row-even"><td>Market Order with Protection</td>
+<td>NA</td>
+<td>不支持</td>
+</tr>
+<tr class="row-odd"><td>Market-Limit</td>
+<td>NA</td>
+<td><a href="#id4"><span class="problematic" id="id5">*</span></a>支持</td>
+</tr>
+<tr class="row-even"><td>Stop</td>
+<td>顺势</td>
+<td><a href="#id6"><span class="problematic" id="id7">*</span></a>支持</td>
+</tr>
+<tr class="row-odd"><td>Stop-Limit</td>
+<td>NA</td>
+<td><a href="#id8"><span class="problematic" id="id9">*</span></a>支持</td>
+</tr>
+<tr class="row-even"><td>Stop Order with Protection</td>
+<td>NA</td>
+<td><a href="#id10"><span class="problematic" id="id11">*</span></a>支持</td>
+</tr>
+<tr class="row-odd"><td>Limit Pair</td>
+<td>NA</td>
+<td><a href="#id12"><span class="problematic" id="id13">*</span></a>支持</td>
+</tr>
+<tr class="row-even"><td>Stop Pair</td>
+<td>NA</td>
+<td><a href="#id14"><span class="problematic" id="id15">*</span></a>支持</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="market">
+<h2>市价（Market)<a class="headerlink" href="#market" title="Permalink to this headline">¶</a></h2>
+<p>以市场当前价格，能成交多少就成交多少，直到BOOK 被消耗，剩下的取消(?)</p>
+<p>A market order only has the potential to match the market price to the <strong>best bid or offer</strong> in the book but <strong>not beyond</strong></p>
+<p>注意这里， best bid/offer 是流动性单子，还是最后输入？</p>
+<p>Market 单子，应该被下面的两种单子保护， 所以存粹的 Market 单子会被取消！</p>
+</div>
+<div class="section" id="market-limit">
+<h2>市限价(Market Limit)<a class="headerlink" href="#market-limit" title="Permalink to this headline">¶</a></h2>
+<p>一个市限价单子， 会按照市场现有价格最优成交，如果只能部分成交， 剩下的部分将以LIMIT 单子继续保留在book 中。</p>
+<p>例子:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>1. 用户发送一个 买  BID,USDJPY,Market-Limit
+2. 订单确认
+3. 这个单子以市场最好的价格 128.85 成交部分
+4. 部分成交报告：  2-Lot @128.85
+5. 剩余部分以 128.85 继续保留在book 中
+</pre></div>
+</div>
+</div>
+<div class="section" id="market-order-with-protection">
+<h2>市价保护(Market Order with Protection)<a class="headerlink" href="#market-order-with-protection" title="Permalink to this headline">¶</a></h2>
+<p>市价保护单子，避免市价单子在一个极端的价格成交(比如book 被击穿), 一个价格保护单子，会带一个预设的价格范围：</p>
+<ol class="arabic simple">
+<li>买单， 会在当前价格加一个区间作为保护</li>
+<li>卖单， 会在当前价格减一个区间作为保护</li>
+</ol>
+<p><strong>Arkenstone</strong> 会在保护价格范围内， 最大程度成交这个市价单子，如果不能完全成交，剩下的部分会按照，预设价格作为 LIMIT 单子置如book中。</p>
+<p>例子:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>1. 用户发送一个 买  BID,USDJPY
+  1. 最优价格 90025, 保护点: 600
+  2. 保护价格： 90025 + 600 = 90625
+2. 部分成交: 2-Lot @90025
+3. 部分成交: 2-Lot @90030
+4. 部分成交: 3-Lot @90050
+5. 接下来最好价格： 90675, 这个已经超过保护价格， 所以这个时候把剩下的数量，以90625 放入LIMIT 队列
+</pre></div>
+</div>
+<p>这个 <strong>保护点</strong> 受到 price Banding 限制。</p>
+</div>
+<div class="section" id="limit">
+<h2>限价格(Limit)<a class="headerlink" href="#limit" title="Permalink to this headline">¶</a></h2>
+<p>限价，让买入放设定一个最大价格， 卖出方设定一个最小价格。</p>
+<p>如果当前价格符合限定价格（比如限买价格高于当前卖价格) 会立马成交部分， 剩下的部分放在book 中排队。</p>
+</div>
+<div class="section" id="stop">
+<h2>顺势(Stop)<a class="headerlink" href="#stop" title="Permalink to this headline">¶</a></h2>
+<p>顺势(Stop) 单子，当提交后，不会立即进入到book 中， 必须等待设定的价格，被成交(执行)价格触发， 触发后，此单子一两种方式进入book:</p>
+<ol class="arabic simple">
+<li>Stop-Limit, 订单进入book 以一个LIMIT 单子</li>
+<li>Stop with protection, 以一个MARKET 单子进入 book</li>
+</ol>
+<p>注意点：</p>
+<ul class="simple">
+<li>顺势单子触发的价格，在不同市场状态是不一样的</li>
+<li>一个Stop 买单子必须 &gt; 最后成交价格， 一个Stop卖单子 必须 &lt; 最后成交价格，如果没有最后成交价格， 最后结算价格会被使用</li>
+<li>在询价阶段(Pre-Open, 盘前)， 或者非取消时间段， 最后结算价格将作为上面公式的标准</li>
+</ul>
+<div class="section" id="stop-limit">
+<h3>顺势限价单子(Stop-Limit)<a class="headerlink" href="#stop-limit" title="Permalink to this headline">¶</a></h3>
+<p>一个Stop-Limit 单子当**成交价格** 触发单子预置价格：</p>
+<ul class="simple">
+<li>对于买单子， 触发价格必须比最后成交价格 <strong>高</strong></li>
+<li>对于卖单子， 触发价格必须被最后成交价格 <strong>低</strong></li>
+</ul>
+<p>一个价格被触发， 此单，将作为LIMIT单子被释放到市场， 尽可以最大成交当前市场价格，剩下的将被置如book 队列。</p>
+</div>
+<div class="section" id="stop-with-protection-swp">
+<h3>顺势保护单子(Stop with protection， SWP)<a class="headerlink" href="#stop-with-protection-swp" title="Permalink to this headline">¶</a></h3>
+<p>SWP 单子, 放在单子在极端偏离价格上面成交， SWP 单子被成交价格成功触发后，进入市价单子成交&#8212;只能在保护价格范围内成交。</p>
+<p>对于买单子，这个会是一个上区间， 对于买单子反之。</p>
+<p><strong>Arkenstone</strong> 会尽最大可能去执行这个单子， 剩余部分以limit 置如book 列表等待</p>
+<p>例子(买):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>1. 用户提交 SWP 买（BID) 10 ESM1, 133000 触发价格
+2. 一个交易价格触发 133000, 此单子被触发
+3. 触发价格 133000, 保护点 300
+4. 触发点LIMIT 133000 + 300 133300
+5. 触发部分成交 2-Lot @ 133025.
+6. 触发部分成交 3-Lot @ 133200.
+7. 触发部分成交 2-Lot @ 133225.
+8. 下一个价格在 133375， 超过保护价格 133300， 剩下单子以 133300 放入LIMIT 队列
+</pre></div>
+</div>
+<p>例子(卖):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>1. 用户提交 SWP 卖（ASK) 10 ESM1, 133000 触发价格
+2. 一个交易价格触发 133000, 此单子被触发
+3. 触发价格 133000, 保护点 300
+4. 触发点LIMIT 133000-300 = 132700
+5. 触发部分成交 2-Lot @ 132900.
+6. 触发部分成交 3-Lot @ 132850.
+7. 触发部分成交 2-Lot @ 132800.
+8. 下一个价格在 132675， 超过保护价格 132700， 剩下单子以 132700 放入LIMIT 队列
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>配对单子<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>TODO</p>
+<p><strong>顺势单子</strong></p>
+<img alt="../_static/images/stop-orders.png" src="../_static/images/stop-orders.png" />
+<p><strong>顺势单子和限价比较</strong></p>
+<img alt="../_static/images/stop_vs_limit.png" src="../_static/images/stop_vs_limit.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ordering2.html" class="btn btn-neutral float-right" title="订单生命周期" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../trading/trading2.html" class="btn btn-neutral float-left" title="模型 Domain" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, AK2018
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

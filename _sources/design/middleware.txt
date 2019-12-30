@@ -1,0 +1,54 @@
+技术选型
+
+================================================
+
+
+语言
+------------------
+
+
+**不讨论具体框架细节**
+
+1. JAVA 80%
+2. Python 5%  部分解释语言，作为粘合剂等
+3. Javascript 5%
+
+
+
+消息
+-------------------
+
+1. Kafka
+2. RabbitMQ
+3. Redis
+4. ZeroMQ
+
+
+
+缓存
+-----------------
+
+1. Redis
+2. Ignite
+3. Hazclast (二代)
+
+
+监控
+----------------
+
+1.  Influxdb
+2.  Graphana
+
+
+其他
+-----------------
+
+1. Rundeck 调度
+2. Metabase DB  报表
+3. Nginx proxy
+
+
+Cloud
+----------------
+
+1. Aliyun (云企业网（CEN） OR  全球加速（Global Acceleration） )

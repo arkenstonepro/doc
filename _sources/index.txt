@@ -1,0 +1,137 @@
+ArkenStone – OpenSource eXchange Solutions
+==========================================
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 关于
+   :titlesonly:
+   :hidden:
+
+   history.rst
+
+
+.. toctree::
+   :maxdepth: 0
+   :caption: 写在前面
+   :titlesonly:
+   :hidden:
+
+   design/biz.rst
+   design/ddd.rst
+   design/middleware.rst
+   design/performance.rst
+   design/proto.rst
+
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 交易引擎
+   :titlesonly:
+   :hidden:
+
+   trading/business.rst
+   trading/business2.rst
+   trading/marketmaker.rst
+   trading/market_integrity.rst
+   trading/trading.rst
+   trading/trading2.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 订单管理
+   :hidden:
+
+   order/ordering1.rst
+   order/ordering2.rst
+   order/Implied_Orders.rst
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: FIX
+   :hidden:
+
+   fix/biz.rst
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 市场数据
+   :titlesonly:
+   :hidden:
+
+   market.rst
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 结算清算
+   :hidden:
+
+   clear.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 前置机
+   :hidden:
+
+   frontend.rst
+
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: 支付
+
+   cash.rst
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: CRM
+
+   crm.rst
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: 运维
+
+   devops/index.rst
+
+
+
+.. image:: _static/images/arkenstone.png
+
+
+
+Arkenstone 是一个高性能交易平台解决套件， 包含
+
+
+* 交易引擎，毫秒级撮合（基于LMAX disruptor)
+* 插件式流动性管理， 兼容当前绝大部分流动性供应商
+* 订单管理系统(OMS, ORS)
+* 结算，多币种实时汇率结算（包括虚拟币)
+* 高性能 FIX 网关解决方案
+* 前置机，多协议支持，Websocket, GRPC, TCP, RESTFUL
+* Dashboard，权限管理，大数据可视化，多维度报表
+* 全球网络加速解决方案
+* 多种支付网关接入
+
+
+
+
+
+整个 **Arkenstone** 交易系统已经在多交易所线上运行， 包括运行超过3年之久的平台。 无论您是做前期商业验证（POC), 还是小规模的交易平台， 还是高达数十万并发量交易平台， Arkenstone 是个不可多得选择。
+
+
+
+**Arkenstone** the high performance Open Source Trading System Solutions,
+The entire platforms have been deployed to online production environment &
+keep running for more than 3 years, verified by more than 5 eXchanges.

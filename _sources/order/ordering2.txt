@@ -1,0 +1,84 @@
+基本概念(二)
+
+========================
+
+
+
+订单生命周期
+-----------------------
+
+一个单子的基本周期包含：
+
+1. Arkenstone: AK
+
+   1. FrontEnd(前置机/网关)
+   2. Trading Engine
+
+
+.. csv-table:: 订单状态
+   :header: "类型", "描述","支持"
+   :widths: 20,60,10
+
+   "Pending New","The order has been received by the AK Frontend platform but not yet acknowledged by the trading engine.","Y"
+   "New","The order has been successfully processed, entered in the order book and acknowledged by the trading engine","Y"
+   "Pending Cancel Confirmation","The cancel request has been received by the AK Frontend platform but not yet acknowledged by the trading engine","Y"
+   "Cancelled","The cancel request has been successfully processed and acknowledged by the trading engine. The order has been pulled from the order book.","Y"
+   "Pending Modification Confirmation","The modification request has been received by the AK platform but not yet acknowledged by the trading engine.","N"
+   "Filled","The full quantity of the order has been matched to another order creating a trade. The order has no remaining quantity on the order book.","Y"
+   "Partially Filled","A subset of the order quantity has been matched to another order creating a trade. The order has remaining quantity on the order book.","Y"
+   "Unknown","The order identifier for which status has been requested does not exist in the system.","Y"
+   "Rejected","The order was rejected.","Y"
+   "Expired","The order has been pulled out of the order book because its life expectancy came to an end.","Y"
+
+
+.. csv-table:: 订单状态
+   :header: "类型", "描述","支持"
+   :widths: 20,60,10
+
+   "Pending New","单子进入网关，尚未进入book.","Y"
+   "New","进入就交易引擎","Y"
+   "Pending Cancel Confirmation","取消命令进入网关，尚未进入交易引擎","Y"
+   "Cancelled","成功取消","Y"
+   "Pending Modification Confirmation","修改单子，AK 不支持，可以通过取消，再提交单子变相实现","N"
+   "Filled","全部成交.","Y"
+   "Partially Filled","部分成交，剩下继续在book 中.","Y"
+   "Unknown","非可知状态，系统不存在","Y"
+   "Rejected","单子被拒绝.","Y"
+   "Expired","单子被从 book 删除，比如GTD,或者有TTL 设置单子 .","Y"
+
+
+
+从订单到持仓
+-----------------------
+
+单子在最佳价格成交后， 便转换成 Trade, 成交记录将被传递给下游， 做清算结算
+
+::
+
+  Clearing is the activity of determining obligations,
+  after which the obligations are discharged by settlement prior to the  the next trading session.
+
+
+
+
+
+Order Aggressor Indicator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+流动性消耗者， 这样的单子是抽走流动性，变相导致价格波动，点差拉大， 每次单子的成交，都会触发这个检查和报告：
+
+1. Order Entry
+2. Market Data
+3. Post-Matching/Clearing
+
+盘前，盘后不会触发相关检查。
+
+TODO?
+
+
+
+
+
+
+
+

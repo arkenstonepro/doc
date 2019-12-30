@@ -1,0 +1,385 @@
+<!-- If you edit this, then please make the same changes to layout_for_doc_website.html, as that is used for the web
+     doc site generation which we put analytics tracking on to identify any potential problem pages  -->
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Implication &mdash; Arkenstone 4.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'4.8',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="next" title="关于FIX" href="../fix/biz.html" />
+    <link rel="prev" title="订单生命周期" href="ordering2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> Arkenstone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<br>
+<a href="https://www.goxtx.com/index_cn.html" title="GoXTX 下一代交易平台技术供应商">GoXTX</a>赞助
+<br>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id3">鸣谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id4">免责声明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">写在前面</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html">对冲 (Hedge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#cfd">CFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#ddd">DDD: 领域驱动设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cqrs">CQRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#eventsource">事件源（EventSource）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cap">CAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id2">我们的问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html">语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id2">消息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id3">缓存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id4">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id5">其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#cloud">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html">内存和CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#java-memory-model">Java memory model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id3">其它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#fix">FIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#sbe">SBE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id2">实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id3">参考</a></li>
+</ul>
+<p class="caption"><span class="caption-text">交易引擎</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html">为什么交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id6">如何交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id7">流动性，价格，杠杆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id11">交易成本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business.html#id12">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business2.html">安全／高可用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/business2.html#id2">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html">定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html#mass-quote">Mass Quote(批量下单)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/marketmaker.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html">限流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#price-banding">Price Banding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#id2">短路设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/market_integrity.html#id3">市场和产品状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading.html">匹配系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading.html#id6">设计原则</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading2.html">模型 Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading/trading2.html#data-structure">数据结构 Data Structure</a></li>
+</ul>
+<p class="caption"><span class="caption-text">订单管理</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ordering1.html">订单基本约束</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordering1.html#id3">订单类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordering2.html">订单生命周期</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordering2.html#id2">从订单到持仓</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Implication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FIX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fix/biz.html">关于FIX</a></li>
+</ul>
+<p class="caption"><span class="caption-text">市场数据</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../market.html">TODO1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../market.html#todo2">TODO2</a></li>
+</ul>
+<p class="caption"><span class="caption-text">结算清算</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clear.html">结算结算</a></li>
+</ul>
+<p class="caption"><span class="caption-text">前置机</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontend.html">前置机</a></li>
+</ul>
+<p class="caption"><span class="caption-text">支付</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html">第三方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#otc">OTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#id2">虚拟币</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../crm.html">CRM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">运维</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">系统需求</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#java">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#kafka">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#id2">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#redis">Redis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">1. TODO1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html#todo2">2. TODO2</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arkenstone</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Implication</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/order/Implied_Orders.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>隐形订单</p>
+<hr class="docutils" />
+<p>Implied Orders 隐形订单，  Implied Markets</p>
+<div class="section" id="implication">
+<h1>Implication<a class="headerlink" href="#implication" title="Permalink to this headline">¶</a></h1>
+<p>Process that identifiers orders as available in a given market based on orders available in related markets.</p>
+<p><strong>Benefit</strong> to Market participants: Liquidity!!</p>
+<ul class="simple">
+<li>Abundant quantity</li>
+<li>Tight price levels</li>
+</ul>
+<p>An implied order is</p>
+<ol class="arabic simple">
+<li>a <strong>spread order</strong> created based on orders available in the <strong>outright market</strong> (&#8216;IN&#8217;) or</li>
+<li>an <strong>outright order</strong> created based on orders available in the spread market (&#8216;OUT&#8217;).</li>
+</ol>
+<p>OutRights</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>The term outrights is used in the forex (FX) market to describe a type of transaction
+where two parties agree to buy or sell a given amount of currency at a predetermined rate at some point in the future.
+This type of transaction is also referred to as a forward outright,an FX forward or currency forward.
+A forward outright transaction is mainly used by parties seeking to hedge against adverse currency
+luctuations or to stabilize a stream of future cash flows by taking advantage of the current rate.
+
+主要在FX 市场上面使用，用于描述一例交易类型， 双方协议在未来某个时间段以一个预先设定好的汇率买卖货币， 也叫 forward outright, 或者 FX Forward
+或者 currency forward, 主要在交易双方规避风险工具。
+
+OutRight rate 和 Spot market 市场使用的是不一样的：
+
+An outright rate differs from the rate used in the spot market
+because the parties factor in characteristics such as
+1. the volatility of the currencies and
+2. their mutual opinion of where they think the exchange rate will be in the future.
+
+The disadvantage of using a forward outright is that
+1. the exchange rate could move in what would have been a favorable direction had the hedge not been implemented.
+
+In this case, the investor doesn&#39;t stand to gain from favorable changes in the exchange rate
+because they agreed to pay a predetermined exchange rate regardless of the rate
+when the investor makes the purchase.
+
+
+
+OutRights Price : You can either pay for a new device through monthly installments or buy the phone at the retail price (outright).
+Outright purchase applies means that you are buying the phone at the standard retail price -
+for example, directly from the Apple store.
+
+
+OutRight Trade: An outright futures position is a long or short trade that is not hedged from market risk. ... An outright position is one which stands on its own,
+and is not part of a larger or more complex trade.
+
+An outright futures position is a long or short trade that is not hedged from market risk.
+Both the potential gain and the potential risk are greater for outright positions than for positions that are covered or hedged in some way.
+An outright position is one which stands on its own, and is not part of a larger or more complex trade.
+</pre></div>
+</div>
+<p>Calendar spread:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>也称为日历价差(calendar spread)或时间价差(time spread)，是指投资者买进离到期日较远的期权(简称远期期权)，
+同时又卖出相同协议价格、相同数量但离到期日较近的期权(简称近期期权)，以获得利润的期权交易方式。
+
+Is a trading strategy for futures and options to minimize risk and cost by buying two contracts or options with the same strike price
+and different delivery dates.
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../fix/biz.html" class="btn btn-neutral float-right" title="关于FIX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ordering2.html" class="btn btn-neutral float-left" title="订单生命周期" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, AK2018
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

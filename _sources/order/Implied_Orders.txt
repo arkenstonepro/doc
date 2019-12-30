@@ -1,0 +1,98 @@
+隐形订单
+
+=============================
+
+
+Implied Orders 隐形订单，  Implied Markets
+
+
+Implication
+------------------------
+
+Process that identifiers orders as available in a given market based on orders available in related markets.
+
+**Benefit** to Market participants: Liquidity!!
+
+- Abundant quantity
+- Tight price levels
+
+
+An implied order is
+
+1. a **spread order** created based on orders available in the **outright market** ('IN') or
+2. an **outright order** created based on orders available in the spread market ('OUT').
+
+
+
+
+
+
+OutRights ::
+
+
+  The term outrights is used in the forex (FX) market to describe a type of transaction
+  where two parties agree to buy or sell a given amount of currency at a predetermined rate at some point in the future.
+  This type of transaction is also referred to as a forward outright,an FX forward or currency forward.
+  A forward outright transaction is mainly used by parties seeking to hedge against adverse currency
+  luctuations or to stabilize a stream of future cash flows by taking advantage of the current rate.
+
+  主要在FX 市场上面使用，用于描述一例交易类型， 双方协议在未来某个时间段以一个预先设定好的汇率买卖货币， 也叫 forward outright, 或者 FX Forward
+  或者 currency forward, 主要在交易双方规避风险工具。
+
+  OutRight rate 和 Spot market 市场使用的是不一样的：
+
+  An outright rate differs from the rate used in the spot market
+  because the parties factor in characteristics such as
+  1. the volatility of the currencies and
+  2. their mutual opinion of where they think the exchange rate will be in the future.
+
+  The disadvantage of using a forward outright is that
+  1. the exchange rate could move in what would have been a favorable direction had the hedge not been implemented.
+
+  In this case, the investor doesn't stand to gain from favorable changes in the exchange rate
+  because they agreed to pay a predetermined exchange rate regardless of the rate
+  when the investor makes the purchase.
+
+
+
+  OutRights Price : You can either pay for a new device through monthly installments or buy the phone at the retail price (outright).
+  Outright purchase applies means that you are buying the phone at the standard retail price -
+  for example, directly from the Apple store.
+
+
+  OutRight Trade: An outright futures position is a long or short trade that is not hedged from market risk. ... An outright position is one which stands on its own,
+  and is not part of a larger or more complex trade.
+
+  An outright futures position is a long or short trade that is not hedged from market risk.
+  Both the potential gain and the potential risk are greater for outright positions than for positions that are covered or hedged in some way.
+  An outright position is one which stands on its own, and is not part of a larger or more complex trade.
+
+
+
+
+
+
+
+
+
+
+
+Calendar spread::
+
+    也称为日历价差(calendar spread)或时间价差(time spread)，是指投资者买进离到期日较远的期权(简称远期期权)，
+    同时又卖出相同协议价格、相同数量但离到期日较近的期权(简称近期期权)，以获得利润的期权交易方式。
+
+    Is a trading strategy for futures and options to minimize risk and cost by buying two contracts or options with the same strike price
+    and different delivery dates.
+
+
+
+
+
+
+
+
+
+
+
+

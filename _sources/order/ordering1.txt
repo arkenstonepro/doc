@@ -1,0 +1,217 @@
+基本概念(一)
+
+========================
+
+
+订单管理系统， 一个单子生命周期从提交到 **Arkenstone** 前置机器，进入booker 系统开始， 这里包含
+
+
+订单基本约束
+-----------------------
+
+在每个订单基本类型之外，有几个要素：
+
+1. 周期
+2. 最小执行数量（可选,尚不支持）
+3. 显示数量（尚不支持）
+
+
+.. csv-table:: 订单基本约束
+   :header: "类型", "描述", "备注"
+   :widths: 20, 50, 10
+
+   "Day", "日单，当日有效(交易日)", "支持"
+   "Good Till Cancel (GTC)", "一直在Book 直到: 完全执行，取消，产品下架", "支持"
+   "Good Till Date (GTD)", "预设到一个日期", "部分支持"
+   "Fill and Kill (FAK)", "匹配在Book上面的Order, 如果有最小数量限制，立马成交， 如果不能成交，立马取消", "不支持"
+   "Fill or Kill (FOK)", "要不全部成交，要不全部取消", "不支持"
+   "Minimum Quantity", "用户可以设定一个最小成交数量，可能包含的规则", "不支持"
+   "Display Quantity", "NA", "不支持"
+
+
+1. FAK orders are immediately executed against resting orders. If the order cannot be fully filled, the remaining balance is canceled. A minimum quantity can be specified. If the specified minimum quantity cannot be filled, the order is canceled. FAK orders are accepted during the **Open market state only**; they will be rejected during any other market state.
+2. FOK orders must be fully filled immediately or the entire order is canceled. An FOK order is created by using the FAK qualifier and setting the minimum quantity to the total order quantity. FOK orders are accepted during the **Open market state only**; they will be rejected during any other market state.
+3. Minimum Quantity: The user can specify a minimum quantity which must be executed for the order. The entire order quantity is displayed to the market. The following rules apply to Minimum Quantity:
+
+  1. If an order specifies a minimum quantity, then at least the minimum quantity must be filled immediately.
+  2. If at least the minimum quantity cannot be filled, then **the entire order is cancelled**.
+  3. If the minimum quantity or more is filled, then the **remaining quantity** is placed on the book.
+
+
+显示数量
+~~~~~~~~~~~~~~~~
+
+以均匀粒度，将订单释放到市场上， 直到数量全部消费掉。
+
+比如： 用户下了一个100数量的买单， 显示数量设置为10， 每次有10个单子显示在市场中，剩余的还放在book 中但是不显示给市场，直到10个成交，剩余在放置10个在book中。
+
+
+订单类型
+-----------------------
+
+订单类型各种平台不一而终, Arkenstone 开源版本，实现基本核心的几个。
+
+
+
+.. csv-table:: 订单类型
+   :header: "类型", "描述", "备注"
+   :widths: 20, 50, 10
+
+   "Market","市价", "支持"
+   "Limit","限价", "支持"
+   "Market Order with Protection","NA", "不支持"
+   "Market-Limit","NA", "*支持"
+   "Stop","顺势", "*支持"
+   "Stop-Limit","NA", "*支持"
+   "Stop Order with Protection","NA", "*支持"
+   "Limit Pair","NA", "*支持"
+   "Stop Pair","NA", "*支持"
+
+
+市价（Market)
+~~~~~~~~~~~~~
+
+以市场当前价格，能成交多少就成交多少，直到BOOK 被消耗，剩下的取消(?)
+
+
+A market order only has the potential to match the market price to the **best bid or offer** in the book but **not beyond**
+
+
+注意这里， best bid/offer 是流动性单子，还是最后输入？
+
+Market 单子，应该被下面的两种单子保护， 所以存粹的 Market 单子会被取消！
+
+
+市限价(Market Limit)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+一个市限价单子， 会按照市场现有价格最优成交，如果只能部分成交， 剩下的部分将以LIMIT 单子继续保留在book 中。
+
+例子::
+
+  1. 用户发送一个 买  BID,USDJPY,Market-Limit
+  2. 订单确认
+  3. 这个单子以市场最好的价格 128.85 成交部分
+  4. 部分成交报告：  2-Lot @128.85
+  5. 剩余部分以 128.85 继续保留在book 中
+
+
+
+
+市价保护(Market Order with Protection)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+市价保护单子，避免市价单子在一个极端的价格成交(比如book 被击穿), 一个价格保护单子，会带一个预设的价格范围：
+
+1.  买单， 会在当前价格加一个区间作为保护
+2.  卖单， 会在当前价格减一个区间作为保护
+
+
+**Arkenstone** 会在保护价格范围内， 最大程度成交这个市价单子，如果不能完全成交，剩下的部分会按照，预设价格作为 LIMIT 单子置如book中。
+
+例子::
+
+  1. 用户发送一个 买  BID,USDJPY
+    1. 最优价格 90025, 保护点: 600
+    2. 保护价格： 90025 + 600 = 90625
+  2. 部分成交: 2-Lot @90025
+  3. 部分成交: 2-Lot @90030
+  4. 部分成交: 3-Lot @90050
+  5. 接下来最好价格： 90675, 这个已经超过保护价格， 所以这个时候把剩下的数量，以90625 放入LIMIT 队列
+
+这个 **保护点** 受到 price Banding 限制。
+
+
+限价格(Limit)
+~~~~~~~~~~~~~~~~~~
+
+限价，让买入放设定一个最大价格， 卖出方设定一个最小价格。
+
+如果当前价格符合限定价格（比如限买价格高于当前卖价格) 会立马成交部分， 剩下的部分放在book 中排队。
+
+
+
+顺势(Stop)
+~~~~~~~~~~~~~~~~~~~~~
+
+顺势(Stop) 单子，当提交后，不会立即进入到book 中， 必须等待设定的价格，被成交(执行)价格触发， 触发后，此单子一两种方式进入book:
+
+1. Stop-Limit, 订单进入book 以一个LIMIT 单子
+2. Stop with protection, 以一个MARKET 单子进入 book
+
+注意点：
+
+-  顺势单子触发的价格，在不同市场状态是不一样的
+-  一个Stop 买单子必须 > 最后成交价格， 一个Stop卖单子 必须 < 最后成交价格，如果没有最后成交价格， 最后结算价格会被使用
+-  在询价阶段(Pre-Open, 盘前)， 或者非取消时间段， 最后结算价格将作为上面公式的标准
+
+
+
+顺势限价单子(Stop-Limit)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+一个Stop-Limit 单子当**成交价格** 触发单子预置价格：
+
+-  对于买单子， 触发价格必须比最后成交价格 **高**
+-  对于卖单子， 触发价格必须被最后成交价格 **低**
+
+一个价格被触发， 此单，将作为LIMIT单子被释放到市场， 尽可以最大成交当前市场价格，剩下的将被置如book 队列。
+
+
+顺势保护单子(Stop with protection， SWP)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SWP 单子, 放在单子在极端偏离价格上面成交， SWP 单子被成交价格成功触发后，进入市价单子成交---只能在保护价格范围内成交。
+
+对于买单子，这个会是一个上区间， 对于买单子反之。
+
+**Arkenstone** 会尽最大可能去执行这个单子， 剩余部分以limit 置如book 列表等待
+
+例子(买)::
+
+  1. 用户提交 SWP 买（BID) 10 ESM1, 133000 触发价格
+  2. 一个交易价格触发 133000, 此单子被触发
+  3. 触发价格 133000, 保护点 300
+  4. 触发点LIMIT 133000 + 300 133300
+  5. 触发部分成交 2-Lot @ 133025.
+  6. 触发部分成交 3-Lot @ 133200.
+  7. 触发部分成交 2-Lot @ 133225.
+  8. 下一个价格在 133375， 超过保护价格 133300， 剩下单子以 133300 放入LIMIT 队列
+
+
+
+例子(卖)::
+
+  1. 用户提交 SWP 卖（ASK) 10 ESM1, 133000 触发价格
+  2. 一个交易价格触发 133000, 此单子被触发
+  3. 触发价格 133000, 保护点 300
+  4. 触发点LIMIT 133000-300 = 132700
+  5. 触发部分成交 2-Lot @ 132900.
+  6. 触发部分成交 3-Lot @ 132850.
+  7. 触发部分成交 2-Lot @ 132800.
+  8. 下一个价格在 132675， 超过保护价格 132700， 剩下单子以 132700 放入LIMIT 队列
+
+
+
+
+
+配对单子
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+
+**顺势单子**
+
+.. image:: /../_static/images/stop-orders.png
+
+
+**顺势单子和限价比较**
+
+.. image:: /../_static/images/stop_vs_limit.png
+
+
+
+
+
+

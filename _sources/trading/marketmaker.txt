@@ -1,0 +1,103 @@
+做市商
+
+==============================
+
+
+Market Maker (做市商)  是一个在 Arkenstone 中授权的可以在买卖市场同时下单的权限的客户， 做市商主要为市场提供流动性。
+
+Arkenstone 会提供专门的 **API** 给流动性供应商，可以批量的下和撤销单子。
+
+
+
+定义
+--------------------------
+
+做市商， 必须不停的为市场提供流动性， 也就是不停 的 buy(bid) 或者 sell(ask) 产品。同时带一定的量，他们愿意去交易的。
+做市商一般要紧跟着最优报价（一档  ask/bid) , 当市场非正常波动的时候， 做市场有义务继续工作，以平稳过度。
+
+
+做市商， 主要依赖细微的点差，赚取利润, 做市商可以根据通过自己策略，每天熟练做成千上万的单子， 但是也可能对市场错误的判断，导致理论全无。
+
+
+
+Mass Quote(批量下单)
+--------------------------
+
+
+
+
+Arkenstone 提供：
+
+
+-  单个产品上面的mass quote New
+-  单个产品上面的mass quote Replace (取消全部以前的，新的替代）
+-  单个产品上面全部取消
+-  单个产品上面的ask/bid 取消
+
+
+
+
+做市商的批量下单在API层面和单独的下单没有太大的区分， Arkenstone 对做市批量单子保护。主要在POST-Trade 后检测。
+
+这些功能主要用来主动取消剩余单子， 或者在TTL 上面做处理, MQP(Mass quote protection) 规则仅仅为流动性单子保护(quote trades) 非一般市场单子。
+
+
+MQP  只有在 mass quote  被执行后， 在一秒钟窗口期如果mass quote 执行量操作预设的 threshold 后将触发：
+
+-  取消剩下所有的流动性
+-  预警发送到流动性供应商， 直到手动确认（?）
+
+
+**做市商*** 需要严格按照Arkenstone Mass Order 操作策略， 如果不能满足，将会被取消资格。
+
+做市的单子必须：
+
+-  当日 daily
+-  LIMIT 单子
+
+
+::
+
+
+   An authorized customer can only have one active resting quote per instrument.
+   If one side of a quote is invalid, the full quote is rejected.
+
+
+
+一个MASS QUOTE 中可以包含单边， 或者双边（买卖） 不同价格， 不同数量， AK 提供更多高级功能：
+
+1.  按照不同步长 point 自动生成单子
+2.  按照不同步长，自动生成数量
+3.  TTL
+4.  Tensor: 几轮 liquidity 后可以自动撤销？
+
+
+
+New
+~~~~~~~~~~~
+TODO
+
+
+
+Cancel
+~~~~~~~~~~~~~~~~~
+TODO
+
+
+Modify
+~~~~~~~~~~~~~~~~~
+TODO
+
+
+
+
+
+
+
+参考
+---------------------------
+
+
+1.  `Market Maker <https://www.investopedia.com/terms/m/marketmaker.asp>`__
+2.  `Market Maker Spread <https://www.investopedia.com/terms/m/marketmakerspread.asp>`__
+3.  `Quote-Driven vs. Order-Driven Markets <https://www.investopedia.com/ask/answers/06/quoteorderdrivenmarket.asp>`__

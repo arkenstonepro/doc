@@ -1,0 +1,385 @@
+<!-- If you edit this, then please make the same changes to layout_for_doc_website.html, as that is used for the web
+     doc site generation which we put analytics tracking on to identify any potential problem pages  -->
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>定义 &mdash; Arkenstone 4.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'4.8',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="next" title="限流" href="market_integrity.html" />
+    <link rel="prev" title="安全／高可用" href="business2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> Arkenstone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<br>
+<a href="https://www.goxtx.com/index_cn.html" title="GoXTX 下一代交易平台技术供应商">GoXTX</a>赞助
+<br>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id3">鸣谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id4">免责声明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">写在前面</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html">对冲 (Hedge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#cfd">CFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#ddd">DDD: 领域驱动设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cqrs">CQRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#eventsource">事件源（EventSource）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cap">CAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id2">我们的问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html">语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id2">消息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id3">缓存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id4">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id5">其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#cloud">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html">内存和CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#java-memory-model">Java memory model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id3">其它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#fix">FIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#sbe">SBE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id2">实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id3">参考</a></li>
+</ul>
+<p class="caption"><span class="caption-text">交易引擎</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="business.html">为什么交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id6">如何交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id7">流动性，价格，杠杆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id11">交易成本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id12">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business2.html">安全／高可用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business2.html#id2">性能</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#mass-quote">Mass Quote(批量下单)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html">限流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#price-banding">Price Banding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#id2">短路设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#id3">市场和产品状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading.html">匹配系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading.html#id6">设计原则</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading2.html">模型 Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading2.html#data-structure">数据结构 Data Structure</a></li>
+</ul>
+<p class="caption"><span class="caption-text">订单管理</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering1.html">订单基本约束</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering1.html#id3">订单类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering2.html">订单生命周期</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering2.html#id2">从订单到持仓</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/Implied_Orders.html">Implication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FIX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fix/biz.html">关于FIX</a></li>
+</ul>
+<p class="caption"><span class="caption-text">市场数据</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../market.html">TODO1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../market.html#todo2">TODO2</a></li>
+</ul>
+<p class="caption"><span class="caption-text">结算清算</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clear.html">结算结算</a></li>
+</ul>
+<p class="caption"><span class="caption-text">前置机</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontend.html">前置机</a></li>
+</ul>
+<p class="caption"><span class="caption-text">支付</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html">第三方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#otc">OTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#id2">虚拟币</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../crm.html">CRM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">运维</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">系统需求</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#java">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#kafka">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#id2">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#redis">Redis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">1. TODO1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html#todo2">2. TODO2</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arkenstone</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>定义</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/trading/marketmaker.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>做市商</p>
+<hr class="docutils" />
+<p>Market Maker (做市商)  是一个在 Arkenstone 中授权的可以在买卖市场同时下单的权限的客户， 做市商主要为市场提供流动性。</p>
+<p>Arkenstone 会提供专门的 <strong>API</strong> 给流动性供应商，可以批量的下和撤销单子。</p>
+<div class="section" id="id1">
+<h1>定义<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>做市商， 必须不停的为市场提供流动性， 也就是不停 的 buy(bid) 或者 sell(ask) 产品。同时带一定的量，他们愿意去交易的。
+做市商一般要紧跟着最优报价（一档  ask/bid) , 当市场非正常波动的时候， 做市场有义务继续工作，以平稳过度。</p>
+<p>做市商， 主要依赖细微的点差，赚取利润, 做市商可以根据通过自己策略，每天熟练做成千上万的单子， 但是也可能对市场错误的判断，导致理论全无。</p>
+</div>
+<div class="section" id="mass-quote">
+<h1>Mass Quote(批量下单)<a class="headerlink" href="#mass-quote" title="Permalink to this headline">¶</a></h1>
+<p>Arkenstone 提供：</p>
+<ul class="simple">
+<li>单个产品上面的mass quote New</li>
+<li>单个产品上面的mass quote Replace (取消全部以前的，新的替代）</li>
+<li>单个产品上面全部取消</li>
+<li>单个产品上面的ask/bid 取消</li>
+</ul>
+<p>做市商的批量下单在API层面和单独的下单没有太大的区分， Arkenstone 对做市批量单子保护。主要在POST-Trade 后检测。</p>
+<p>这些功能主要用来主动取消剩余单子， 或者在TTL 上面做处理, MQP(Mass quote protection) 规则仅仅为流动性单子保护(quote trades) 非一般市场单子。</p>
+<p>MQP  只有在 mass quote  被执行后， 在一秒钟窗口期如果mass quote 执行量操作预设的 threshold 后将触发：</p>
+<ul class="simple">
+<li>取消剩下所有的流动性</li>
+<li>预警发送到流动性供应商， 直到手动确认（?）</li>
+</ul>
+<p><strong>做市商*</strong> 需要严格按照Arkenstone Mass Order 操作策略， 如果不能满足，将会被取消资格。</p>
+<p>做市的单子必须：</p>
+<ul class="simple">
+<li>当日 daily</li>
+<li>LIMIT 单子</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">authorized</span> <span class="n">customer</span> <span class="n">can</span> <span class="n">only</span> <span class="n">have</span> <span class="n">one</span> <span class="n">active</span> <span class="n">resting</span> <span class="n">quote</span> <span class="n">per</span> <span class="n">instrument</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">one</span> <span class="n">side</span> <span class="n">of</span> <span class="n">a</span> <span class="n">quote</span> <span class="ow">is</span> <span class="n">invalid</span><span class="p">,</span> <span class="n">the</span> <span class="n">full</span> <span class="n">quote</span> <span class="ow">is</span> <span class="n">rejected</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>一个MASS QUOTE 中可以包含单边， 或者双边（买卖） 不同价格， 不同数量， AK 提供更多高级功能：</p>
+<ol class="arabic simple">
+<li>按照不同步长 point 自动生成单子</li>
+<li>按照不同步长，自动生成数量</li>
+<li>TTL</li>
+<li>Tensor: 几轮 liquidity 后可以自动撤销？</li>
+</ol>
+<div class="section" id="new">
+<h2>New<a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="cancel">
+<h2>Cancel<a class="headerlink" href="#cancel" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="modify">
+<h2>Modify<a class="headerlink" href="#modify" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h1>参考<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://www.investopedia.com/terms/m/marketmaker.asp">Market Maker</a></li>
+<li><a class="reference external" href="https://www.investopedia.com/terms/m/marketmakerspread.asp">Market Maker Spread</a></li>
+<li><a class="reference external" href="https://www.investopedia.com/ask/answers/06/quoteorderdrivenmarket.asp">Quote-Driven vs. Order-Driven Markets</a></li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="market_integrity.html" class="btn btn-neutral float-right" title="限流" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="business2.html" class="btn btn-neutral float-left" title="安全／高可用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, AK2018
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

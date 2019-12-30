@@ -1,0 +1,588 @@
+<!-- If you edit this, then please make the same changes to layout_for_doc_website.html, as that is used for the web
+     doc site generation which we put analytics tracking on to identify any potential problem pages  -->
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>匹配系统 &mdash; Arkenstone 4.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'4.8',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="next" title="模型 Domain" href="trading2.html" />
+    <link rel="prev" title="限流" href="market_integrity.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> Arkenstone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<br>
+<a href="https://www.goxtx.com/index_cn.html" title="GoXTX 下一代交易平台技术供应商">GoXTX</a>赞助
+<br>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id3">鸣谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html#id4">免责声明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">写在前面</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html">对冲 (Hedge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#cfd">CFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/biz.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#ddd">DDD: 领域驱动设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cqrs">CQRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#eventsource">事件源（EventSource）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#cap">CAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id2">我们的问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/ddd.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html">语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id2">消息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id3">缓存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id4">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#id5">其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/middleware.html#cloud">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html">内存和CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#java-memory-model">Java memory model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id3">其它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/performance.html#id4">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#fix">FIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#sbe">SBE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id2">实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/proto.html#id3">参考</a></li>
+</ul>
+<p class="caption"><span class="caption-text">交易引擎</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="business.html">为什么交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id6">如何交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id7">流动性，价格，杠杆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id11">交易成本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html#id12">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business2.html">安全／高可用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business2.html#id2">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marketmaker.html">定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marketmaker.html#mass-quote">Mass Quote(批量下单)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marketmaker.html#id2">参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html">限流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#price-banding">Price Banding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#id2">短路设计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="market_integrity.html#id3">市场和产品状态</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">匹配系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id6">设计原则</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading2.html">模型 Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading2.html#data-structure">数据结构 Data Structure</a></li>
+</ul>
+<p class="caption"><span class="caption-text">订单管理</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering1.html">订单基本约束</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering1.html#id3">订单类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering2.html">订单生命周期</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/ordering2.html#id2">从订单到持仓</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order/Implied_Orders.html">Implication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FIX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fix/biz.html">关于FIX</a></li>
+</ul>
+<p class="caption"><span class="caption-text">市场数据</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../market.html">TODO1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../market.html#todo2">TODO2</a></li>
+</ul>
+<p class="caption"><span class="caption-text">结算清算</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clear.html">结算结算</a></li>
+</ul>
+<p class="caption"><span class="caption-text">前置机</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontend.html">前置机</a></li>
+</ul>
+<p class="caption"><span class="caption-text">支付</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html">第三方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#otc">OTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cash.html#id2">虚拟币</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../crm.html">CRM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">运维</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">系统需求</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#java">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#kafka">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#id2">监控</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html#redis">Redis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Arkenstone</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>匹配系统</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/trading/trading.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>引擎细节(一)</p>
+<hr class="docutils" />
+<p>此篇包含交易引擎一个最最核心模块设计规范（参考CMEGroup），不会涉及到具体逻辑，引擎细节(二) 部分会涉猎更详细模块设计的细节。</p>
+<p>主要涉及订单的</p>
+<ol class="arabic simple">
+<li>管理</li>
+<li>匹配</li>
+</ol>
+<hr class="docutils" />
+<p>A matching algorithm is logic that determines the allocation of <strong>matching orders</strong> and
+is designed to ensure each market participant is given the <strong>best possible execution</strong> at the fairest price</p>
+<div class="section" id="id1">
+<h1>匹配系统<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>也可以叫撮合系统(order matching)。</p>
+<p>根据不同的匹配算法，撮合成交订单， 最简单的匹配的逻辑其实很容易理解， 买卖单子按照价格分别排两个列表， 买价（BID）从高到底（买价越高越容易成交），卖价（ASK）的从低到高（卖价越低越容易成交）。 然后入砌俄罗斯方块，买价格大于等于卖价格，这两个单子就匹配好了。</p>
+<p>比如市场现行情如下， S&amp;P500， 最高买价（BID）, 2041.00； 最低卖价（ASK）2041.25， 点差0.25（记得，还有上文说的做市商）， 如下你现在下个 在2041.25 买 100 的委单。</p>
+<img alt="../_static/images/fifo_1.png" src="../_static/images/fifo_1.png" />
+<p>刚好有卖价在2041.25的单子150个，当然这150个有好几个人下的，  从上到下，依次成交，直到最终100个单子全部被匹配掉，还剩下面的50个。</p>
+<img alt="../_static/images/fifo_2.png" src="../_static/images/fifo_2.png" />
+<img alt="../_static/images/fifo_3.png" src="../_static/images/fifo_3.png" />
+<p>匹配系统， 其实只干了这一件事情； 同时匹配系统需要把价格广播出去。</p>
+<p>在我们这里， 价格没有因为此单影响， 最终还是， 2041.00 / 2041.25; 如果用户买了200个， 那么价格就会调整到: 2041.00 / 2041.50;</p>
+<p>这个时候可能更多人买， BID 价格会继续往上涨。 或者流动性供应商注入更多的BID 单子， 最终点差稳定一定范围内， 而价格根据买卖双反的博弈，往上或者下移动， 大家可以参考市场深度图， 可以看到买卖双方那方更强。 如下面的市场深度图可以看出那方更强：</p>
+<img alt="../_static/images/market_depth.png" src="../_static/images/market_depth.png" />
+<div class="section" id="id2">
+<h2>匹配算法<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>上面的匹配算法，是最最简单的 <strong>FIFO</strong> 匹配算法， 显示中有其他几种非常复杂的算法， 这里列出来可能仅做介绍， 不做复杂衍生，Arkenstone(开源），不保证全部实现。</p>
+<table border="1" class="docutils" id="id7">
+<caption><span class="caption-text">匹配算法</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="22%" />
+<col width="67%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">类型</th>
+<th class="head">描述</th>
+<th class="head">支持</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>FIFO</td>
+<td>FIFO</td>
+<td>Y</td>
+</tr>
+<tr class="row-odd"><td>FIFO with LMM</td>
+<td>FIFO with LMM</td>
+<td>Y</td>
+</tr>
+<tr class="row-even"><td>Allocation</td>
+<td>NA</td>
+<td>N</td>
+</tr>
+<tr class="row-odd"><td>FIFO with Top Order and LMM</td>
+<td>NA</td>
+<td>N</td>
+</tr>
+<tr class="row-even"><td>Pro-Rata</td>
+<td>NA</td>
+<td>N</td>
+</tr>
+<tr class="row-odd"><td>Configurable</td>
+<td>NA.</td>
+<td>N</td>
+</tr>
+<tr class="row-even"><td>Threshold Pro-Rata</td>
+<td>NA</td>
+<td>N</td>
+</tr>
+<tr class="row-odd"><td>Threshold Pro-Rata with LMM</td>
+<td>NA</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="fifo">
+<h3>FIFO<a class="headerlink" href="#fifo" title="Permalink to this headline">¶</a></h3>
+<p>FIFO (First In, First Out) 是最简单的匹配算法， 按照单子的价格，和进入的时间进行按顺序匹配。</p>
+<p>FIFO 例子1:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Orders</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">below</span> <span class="n">table</span> <span class="n">are</span> <span class="n">at</span> <span class="n">the</span> <span class="n">same</span> <span class="n">price</span> <span class="n">on</span> <span class="n">the</span> <span class="n">buy</span> <span class="n">side</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Earliest</span> <span class="n">timestamp</span> <span class="ow">is</span> <span class="n">Order</span> <span class="mi">1</span><span class="p">,</span> <span class="n">then</span> <span class="n">order</span> <span class="mi">2</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">The</span> <span class="n">sell</span> <span class="n">aggressor</span> <span class="ow">is</span> <span class="n">at</span> <span class="n">the</span> <span class="n">same</span> <span class="n">price</span> <span class="k">as</span> <span class="n">the</span> <span class="n">buy</span> <span class="n">orders</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">The</span> <span class="n">sell</span> <span class="n">aggressor</span> <span class="ow">is</span> <span class="n">a</span> <span class="mi">50</span> <span class="n">lot</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The aggressing quantity is allocated to orders 1 + 2 (filling them). Order 3 receives a partial fill and will have 21 lots remaining after the match. The other orders receive no fill quantity.</p>
+<table border="1" class="docutils" id="id8">
+<caption><span class="caption-text">FIFO</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">订单号</th>
+<th class="head">数量</th>
+<th class="head">剩余</th>
+<th class="head">消耗</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>5</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>9</td>
+<td>0</td>
+<td>9</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>57</td>
+<td>21</td>
+<td>36</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>28</td>
+<td>28</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>300</td>
+<td>300</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fifo-with-lmm">
+<h3>FIFO with LMM<a class="headerlink" href="#fifo-with-lmm" title="Permalink to this headline">¶</a></h3>
+<p>LMM: lead market marker</p>
+<p>FIFO  with LMM 是一个加强的FIFO 算法， 允许LMM在FIFO 前预先满足， 同时也要遵循FIFO 规： 价格+时间：</p>
+<p>LMM 是和平台有协议的做市商， 为特定的产品提供流动性，流动性供应商, 详情参考 market maker 文档</p>
+<ul class="simple">
+<li>If the LMM has a single order at an elected price level it will match N% of the remaining incoming order quantity, with N equal to the LMM&#8217;s allocation percentage. However, the matched quantity will not exceed the LMM&#8217;s order quantity.</li>
+<li>If the LMM has multiple orders at an elected price level, then the LMM quantity is aggregated and will match N% of the remaining incoming order quantity. Multiple LMM orders are matched on Time Priority basis until N% quantity allocation is fulfilled.</li>
+<li>All remaining resting orders at an elected price level (including LMM orders) are matched according to FIFO rules.</li>
+</ul>
+</div>
+<div class="section" id="pro-rata">
+<h3>Pro-Rata<a class="headerlink" href="#pro-rata" title="Permalink to this headline">¶</a></h3>
+<p>Defination:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pro</span> <span class="n">rata</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">Latin</span> <span class="n">term</span> <span class="n">used</span> <span class="n">to</span> <span class="n">describe</span> <span class="n">a</span> <span class="n">proportionate</span> <span class="n">allocation</span><span class="o">.</span>
+<span class="n">It</span> <span class="n">essentially</span> <span class="n">translates</span> <span class="n">to</span> <span class="s2">&quot;in proportion,&quot;</span> <span class="n">which</span> <span class="n">means</span> <span class="n">a</span> <span class="n">process</span>
+<span class="n">where</span> <span class="n">whatever</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">allocated</span> <span class="n">will</span> <span class="n">be</span> <span class="n">distributed</span> <span class="ow">in</span> <span class="n">equal</span> <span class="n">portions</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>等比例均分在AK 遵循原则：</p>
+<ul class="simple">
+<li>比例分， 最小限额下</li>
+<li>剩下的FIFO 分(考虑取余， 删除不符合最小限额的)</li>
+</ul>
+<p><strong>例子(Pro Rata with TOP)</strong></p>
+<p>简单的没有列， 这个是WITH TOP 的实现</p>
+<p><strong>Pro Rata with TOP</strong></p>
+<ol class="arabic simple">
+<li>第一个全分配</li>
+<li>剩下的遵循 pro rate 规则</li>
+</ol>
+<table border="1" class="docutils" id="id9">
+<caption><span class="caption-text">Pro Rata With TOP</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="29%" />
+<col width="57%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">卖价</th>
+<th class="head">数量</th>
+<th class="head">单号</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>9711</td>
+<td>200</td>
+<td>1(Top)</td>
+</tr>
+<tr class="row-odd"><td>9711</td>
+<td>25</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>9711</td>
+<td>50</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>9711</td>
+<td>10</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>现在 有一个 BID  250 &#64;9711 进入BOOK</p>
+<p>第一单， 200 被预分配， 剩下的  50  在下面三个单子 （25+50+10）= 85 中分配：</p>
+<ul class="simple">
+<li>25/85 x 50 = 14</li>
+<li>50/85 x 50 = 29</li>
+<li>10/85 x 50 = 5</li>
+</ul>
+<p>分配掉  29+14+5  = 48 还剩下 2 -lot  按照 FIFO 分配， 完全非配个 第二个单子， 最终分配：</p>
+<table border="1" class="docutils" id="id10">
+<caption><span class="caption-text">Pro Rata With TOP</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="22%" />
+<col width="44%" />
+<col width="11%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">卖价</th>
+<th class="head">数量</th>
+<th class="head">单号</th>
+<th class="head">分配</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>9711</td>
+<td>200</td>
+<td>1(Top)</td>
+<td>200</td>
+</tr>
+<tr class="row-odd"><td>9711</td>
+<td>25</td>
+<td>2</td>
+<td>14+2 = 16</td>
+</tr>
+<tr class="row-even"><td>9711</td>
+<td>50</td>
+<td>3</td>
+<td>29</td>
+</tr>
+<tr class="row-odd"><td>9711</td>
+<td>10</td>
+<td>4</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>其他算法不在这里枚举， Arkenstone  中实现的基本是标准的 <strong>FIFO</strong></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>价格<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>从匹配系统出来的价格就是我们日常说的价格(tick)， 还有五/十/百(全)档数据， 历史数据。</p>
+<p>K线整合等等， 就是另外一个模块（Market），专门负责价格的聚合整理和广播出去。</p>
+</div>
+<div class="section" id="id4">
+<h2>下单<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>负责接收你买卖指令的地方， 在发送到匹配引擎前， 需要做风险检查， 比如资金充沛与否，是否在黑名单， 账号是否被锁定等等。</p>
+</div>
+<div class="section" id="id5">
+<h2>风控<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>风险的监控和管理，在开市的时间， 特别当海量的单子涌入系统， 用户的持仓，现金，占用保证金，浮动盈亏等都在不停的变化，对风险的实时监控是个非常大的挑战。</p>
+<p>价格是否超过阉值？ Price Banding 权衡和设计。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h1>设计原则<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<p>根据 <strong>单一职责原则(SRP：Single responsibility principle)</strong>  可以看到， 核心交易引擎之匹配引擎, 功能非常简练：</p>
+<ul class="simple">
+<li>接收订单输入、撤销(批量)</li>
+<li>输出报价</li>
+<li>输出匹配</li>
+<li>配置接口</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trading2.html" class="btn btn-neutral float-right" title="模型 Domain" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="market_integrity.html" class="btn btn-neutral float-left" title="限流" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, AK2018
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
